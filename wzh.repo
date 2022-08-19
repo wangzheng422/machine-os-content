@@ -1,0 +1,24 @@
+# RHEL repos
+[rhel-8-baseos]
+baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-baseos-rpms
+
+[rhel-8-appstream]
+baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-appstream-rpms
+
+[rhel-8-fast-datapath]
+baseurl=ftp://REPO_IP/dnf/fast-datapath-for-rhel-8-x86_64-rpms
+
+[rhel-8-advanced-virt]
+baseurl=ftp://REPO_IP/dnf/advanced-virt-for-rhel-8-x86_64-rpms
+
+[rhel-8-nfv]
+baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-nfv-rpms
+
+# These are the OpenShift RPMs, see https://mirror.openshift.com/pub/openshift-v4/dependencies/rpms/
+# except there's things like afterburn that are only internal right now unfortunately.
+[rhel-8-server-ose]
+baseurl=https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rpms/4.10-beta/
+
+[epel]
+baseurl=http://mirrors.mit.edu/epel/8/Everything/x86_64/
+
