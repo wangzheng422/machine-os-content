@@ -40,7 +40,8 @@ repos:
   - rhel-8-baseos
   - rhel-8-appstream
   - rhel-8-fast-datapath
-  - rhel-8-server-ose
+  # we don't have rhel-8-server-ose, it is private
+  # - rhel-8-server-ose
   # add by wzh
   - epel
   # end add by wzh
@@ -288,8 +289,9 @@ repo-packages:
   - repo: rhel-8-appstream
     packages:
       - nss-altfiles
-  - repo: rhel-8-server-ose
-    packages:
+  # we don't have rhel-8-server-ose repo, it is private inside redhat build system
+  # - repo: rhel-8-server-ose
+  #   packages:
       # eventually, we want the one from the container-tools module, but we're
       # not there yet
       - toolbox
