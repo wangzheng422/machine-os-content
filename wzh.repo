@@ -23,4 +23,4 @@ baseurl=ftp://REPO_IP/dnf/rhel-8-server-ose
 baseurl=http://mirrors.mit.edu/epel/8/Everything/x86_64/
 enabled=1
 repo_gpgcheck=0
-gpgcheck=0
+gpgcheck=1
