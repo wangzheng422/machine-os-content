@@ -289,9 +289,9 @@ repo-packages:
   - repo: rhel-8-appstream
     packages:
       - nss-altfiles
-  # we don't have rhel-8-server-ose repo, it is private inside redhat build system
-  # - repo: rhel-8-server-ose
-  #   packages:
+      # we don't have rhel-8-server-ose repo, it is private inside redhat build system
+      # - repo: rhel-8-server-ose
+      #   packages:
       # eventually, we want the one from the container-tools module, but we're
       # not there yet
       - toolbox
