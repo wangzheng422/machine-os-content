@@ -50,7 +50,7 @@ repos:
 rpmdb: bdb
 
 # We include hours/minutes to avoid version number reuse
-automatic-version-prefix: "410.84.<date:%Y%m%d%H%M>"
+automatic-version-prefix: "410.86.wzh.<date:%Y%m%d%H%M>"
 # This ensures we're semver-compatible which OpenShift wants
 automatic-version-suffix: "-"
 mutate-os-release: "4.10"
@@ -214,69 +214,81 @@ exclude-packages:
 # out the bottom and run `coreos-assembler build`.
 # A lof of packages are inherited by the manifests included at the top.
 packages:
- # Contains SCTP (https://bugzilla.redhat.com/show_bug.cgi?id=1718049)
- # and it's not really going to be worth playing the "where's my kernel module"
- # game long term.  If we ship it we support it, etc.
- - kernel-modules-extra
- # Audit
- - audit
- # Containers
- - containernetworking-plugins
- # Pinned due to cosa on Fedora not honoring RHEL 8 modules as expected
- - container-selinux
- - cri-o cri-tools
- # Networking
- - nfs-utils
- - openvswitch2.16
- - dnsmasq
- - NetworkManager-ovs
- # Extra runtime
- - sssd
- # Common tools used by scripts and admins interactively
- - rsync tmux
- - nmap-ncat strace
- # Editors
- - nano
- # Red Hat CA certs
- - subscription-manager-rhsm-certificates
- # Used on the bootstrap node
- - systemd-journal-remote
- # Extras
- - systemd-journal-gateway
- # RHEL7 compatibility
- - compat-openssl10
- # Make sure we pull in at least clevis 15; it drops the rd.neednet=1 hardcode
- # and has a few other patches we need.
- # https://bugzilla.redhat.com/show_bug.cgi?id=1853651
- - "'clevis >= 15-1.el8' 'clevis-luks >= 15-1.el8' 'clevis-dracut >= 15-1.el8'"
- - cryptsetup-reencrypt tpm2-tools
- # Used to update PAM configuration to work with SSSD
- # https://bugzilla.redhat.com/show_bug.cgi?id=1774154
- - authselect
- # https://bugzilla.redhat.com/show_bug.cgi?id=1900759
- - qemu-guest-agent
- # BELOW HERE ARE PACKAGES NOT IN RHEL
- # OpenShift OKD
- #- origin-node origin-hyperkube origin-clients
- # OpenShift
- - openshift-hyperkube openshift-clients
- # Gluster - Used for Openshift e2e gluster testcases
- # Reverts https://gitlab.cee.redhat.com/coreos/redhat-coreos/merge_requests/367 and add it for all arches
- - glusterfs-fuse
- # Needed for kernel-devel extension: https://bugzilla.redhat.com/show_bug.cgi?id=1885408
- # x86_64 and s390x have these packages installed as dependencies of other packages, ppc64le does not
- # FIXME: once the below BZs have been resolved to remove perl dependencies, this can be done in the extensions script
- # https://bugzilla.redhat.com/show_bug.cgi?id=1877905
- # https://bugzilla.redhat.com/show_bug.cgi?id=1886201
- - perl-interpreter
- # https://github.com/coreos/fedora-coreos-tracker/issues/404
- # https://bugzilla.redhat.com/show_bug.cgi?id=1925698
- # https://github.com/openshift/machine-config-operator/pull/2421
- - conntrack-tools
- # add by wzh
- - tcpdump
- - iperf3
- - htop
+  # Contains SCTP (https://bugzilla.redhat.com/show_bug.cgi?id=1718049)
+  # and it's not really going to be worth playing the "where's my kernel module"
+  # game long term.  If we ship it we support it, etc.
+  - kernel-modules-extra
+  # Audit
+  - audit
+  # Containers
+  - containernetworking-plugins
+  # Pinned due to cosa on Fedora not honoring RHEL 8 modules as expected
+  - container-selinux
+  - cri-o cri-tools
+  # Networking
+  - nfs-utils
+  - openvswitch2.16
+  - dnsmasq
+  - NetworkManager-ovs
+  # Extra runtime
+  - sssd
+  # Common tools used by scripts and admins interactively
+  - rsync tmux
+  - nmap-ncat strace
+  # Editors
+  - nano
+  # Red Hat CA certs
+  - subscription-manager-rhsm-certificates
+  # Used on the bootstrap node
+  - systemd-journal-remote
+  # Extras
+  - systemd-journal-gateway
+  # RHEL7 compatibility
+  - compat-openssl10
+  # Make sure we pull in at least clevis 15; it drops the rd.neednet=1 hardcode
+  # and has a few other patches we need.
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1853651
+  - "'clevis >= 15-1.el8' 'clevis-luks >= 15-1.el8' 'clevis-dracut >= 15-1.el8'"
+  - cryptsetup-reencrypt tpm2-tools
+  # Used to update PAM configuration to work with SSSD
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1774154
+  - authselect
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1900759
+  - qemu-guest-agent
+  # BELOW HERE ARE PACKAGES NOT IN RHEL
+  # OpenShift OKD
+  #- origin-node origin-hyperkube origin-clients
+  # OpenShift
+  - openshift-hyperkube openshift-clients
+  # Gluster - Used for Openshift e2e gluster testcases
+  # Reverts https://gitlab.cee.redhat.com/coreos/redhat-coreos/merge_requests/367 and add it for all arches
+  - glusterfs-fuse
+  # Needed for kernel-devel extension: https://bugzilla.redhat.com/show_bug.cgi?id=1885408
+  # x86_64 and s390x have these packages installed as dependencies of other packages, ppc64le does not
+  # FIXME: once the below BZs have been resolved to remove perl dependencies, this can be done in the extensions script
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1877905
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1886201
+  - perl-interpreter
+  # https://github.com/coreos/fedora-coreos-tracker/issues/404
+  # https://bugzilla.redhat.com/show_bug.cgi?id=1925698
+  # https://github.com/openshift/machine-config-operator/pull/2421
+  - conntrack-tools
+  # add by wzh
+  - tcpdump
+  - iperf3
+  - htop
+  - conmon
+  - container-selinux
+  - containernetworking-plugins
+  - containers-common
+  - criu
+  - crun
+  - fuse-overlayfs
+  - podman
+  - runc
+  - skopeo
+  - slirp4netns
+  - toolbox
  # end by wzh
 
 
@@ -292,25 +304,25 @@ repo-packages:
       # we don't have rhel-8-server-ose repo, it is private inside redhat build system
       # - repo: rhel-8-server-ose
       #   packages:
-      # eventually, we want the one from the container-tools module, but we're
-      # not there yet
-      - toolbox
-      # These are the only container stack packages we don't get from modularity
-      # nor from base RHEL for various reasons. See:
-      # https://github.com/openshift/os/pull/681#issuecomment-1022443830
-      #
-      # newer than what is included in RHEL 8.4.Z EUS, but addresses some BZs
-      # that customers were encountering
-      - container-selinux
-      # newer than what is included in RHEL 8.4.Z EUS, because the k8s folks
-      # wanted to start testing with 1.x versions of crun
-      - crun
-      # slightly newer than what is included in RHEL 8.4.Z EUS, because we had
-      # previously shipped a newer version in OCP/RHCOS 4.9 and had to preserve
-      # the upgrade path
-      - runc
-      # newer than what is included in RHEL 8.4.Z EUS, needed to match cri-o changes
-      - conmon
+      # # eventually, we want the one from the container-tools module, but we're
+      # # not there yet
+      # - toolbox
+      # # These are the only container stack packages we don't get from modularity
+      # # nor from base RHEL for various reasons. See:
+      # # https://github.com/openshift/os/pull/681#issuecomment-1022443830
+      # #
+      # # newer than what is included in RHEL 8.4.Z EUS, but addresses some BZs
+      # # that customers were encountering
+      # - container-selinux
+      # # newer than what is included in RHEL 8.4.Z EUS, because the k8s folks
+      # # wanted to start testing with 1.x versions of crun
+      # - crun
+      # # slightly newer than what is included in RHEL 8.4.Z EUS, because we had
+      # # previously shipped a newer version in OCP/RHCOS 4.9 and had to preserve
+      # # the upgrade path
+      # - runc
+      # # newer than what is included in RHEL 8.4.Z EUS, needed to match cri-o changes
+      # - conmon
 
 modules:
   enable:
