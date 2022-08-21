@@ -40,8 +40,7 @@ repos:
   - rhel-8-baseos
   - rhel-8-appstream
   - rhel-8-fast-datapath
-  # we don't have rhel-8-server-ose, it is private
-  # - rhel-8-server-ose
+  - rhel-8-server-ose
   # add by wzh
   - epel
   # end add by wzh
@@ -50,7 +49,7 @@ repos:
 rpmdb: bdb
 
 # We include hours/minutes to avoid version number reuse
-automatic-version-prefix: "410.86.wzh.<date:%Y%m%d%H%M>"
+automatic-version-prefix: "410.84.wzh.<date:%Y%m%d%H%M>"
 # This ensures we're semver-compatible which OpenShift wants
 automatic-version-suffix: "-"
 mutate-os-release: "4.10"
@@ -277,18 +276,6 @@ packages:
   - tcpdump
   - iperf3
   - htop
-  - conmon
-  - container-selinux
-  - containernetworking-plugins
-  - containers-common
-  - criu
-  - crun
-  - fuse-overlayfs
-  - podman
-  - runc
-  - skopeo
-  - slirp4netns
-  - toolbox
  # end by wzh
 
 
@@ -301,28 +288,28 @@ repo-packages:
   - repo: rhel-8-appstream
     packages:
       - nss-altfiles
-      # we don't have rhel-8-server-ose repo, it is private inside redhat build system
-      # - repo: rhel-8-server-ose
-      #   packages:
-      # # eventually, we want the one from the container-tools module, but we're
-      # # not there yet
-      # - toolbox
-      # # These are the only container stack packages we don't get from modularity
-      # # nor from base RHEL for various reasons. See:
-      # # https://github.com/openshift/os/pull/681#issuecomment-1022443830
-      # #
-      # # newer than what is included in RHEL 8.4.Z EUS, but addresses some BZs
-      # # that customers were encountering
-      # - container-selinux
-      # # newer than what is included in RHEL 8.4.Z EUS, because the k8s folks
-      # # wanted to start testing with 1.x versions of crun
-      # - crun
-      # # slightly newer than what is included in RHEL 8.4.Z EUS, because we had
-      # # previously shipped a newer version in OCP/RHCOS 4.9 and had to preserve
-      # # the upgrade path
-      # - runc
-      # # newer than what is included in RHEL 8.4.Z EUS, needed to match cri-o changes
-      # - conmon
+
+  - repo: rhel-8-server-ose
+    packages:
+      # eventually, we want the one from the container-tools module, but we're
+      # not there yet
+      - toolbox
+      # These are the only container stack packages we don't get from modularity
+      # nor from base RHEL for various reasons. See:
+      # https://github.com/openshift/os/pull/681#issuecomment-1022443830
+      #
+      # newer than what is included in RHEL 8.4.Z EUS, but addresses some BZs
+      # that customers were encountering
+      - container-selinux
+      # newer than what is included in RHEL 8.4.Z EUS, because the k8s folks
+      # wanted to start testing with 1.x versions of crun
+      - crun
+      # slightly newer than what is included in RHEL 8.4.Z EUS, because we had
+      # previously shipped a newer version in OCP/RHCOS 4.9 and had to preserve
+      # the upgrade path
+      - runc
+      # newer than what is included in RHEL 8.4.Z EUS, needed to match cri-o changes
+      - conmon
 
 modules:
   enable:
