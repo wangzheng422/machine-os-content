@@ -275,6 +275,7 @@ packages:
   # add by wzh
   - tcpdump
   - iperf3
+  - dstat
   - htop
  # end by wzh
 
