@@ -21,8 +21,10 @@ baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-nfv-tus-rpms
 [rhel-8-server-ose]
 baseurl=ftp://REPO_IP/dnf/rhel-8-server-ose
 
+# mirror list
+# https://mirrors.fedoraproject.org/mirrorlist?repo=epel-8&arch=x86_64&&country=us
 [epel]
-baseurl=https://mirror.facebook.net/fedora/epel/8/Everything/x86_64/
+baseurl=https://mirror.fcix.net/epel/8/Everything/x86_64/
 enabled=1
 repo_gpgcheck=0
 gpgcheck=0
