@@ -14,8 +14,10 @@ baseurl=ftp://REPO_IP/dnf/advanced-virt-for-rhel-8-x86_64-eus-rpms
 [rhel-8-nfv]
 baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-nfv-tus-rpms
 
-# These are the OpenShift RPMs, see https://mirror.openshift.com/pub/openshift-v4/dependencies/rpms/
-# except there's things like afterburn that are only internal right now unfortunately.
+# upstream: http://download.eng.bos.redhat.com/rcm-guest/puddles/RHAOS/plashets/4.10-el8/building/x86_64/os/
+# it is internal resource right now, confidential.
+# or: https://mirror.openshift.com/enterprise/reposync/
+# it also require logins.
 [rhel-8-server-ose]
 baseurl=ftp://REPO_IP/dnf/rhel-8-server-ose
 
