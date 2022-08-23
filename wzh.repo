@@ -17,6 +17,7 @@ baseurl=ftp://REPO_IP/dnf/rhel-8-for-x86_64-nfv-tus-rpms
 # upstream: http://download.eng.bos.redhat.com/rcm-guest/puddles/RHAOS/plashets/4.10-el8/building/x86_64/os/
 # it is internal resource right now, confidential.
 # or: https://mirror.openshift.com/enterprise/reposync/
+# https://mirror.openshift.com/enterprise/reposync/4.10/rhel-8-server-ose-rpms/
 # it also require logins.
 [rhel-8-server-ose]
 baseurl=ftp://REPO_IP/dnf/rhel-8-server-ose
