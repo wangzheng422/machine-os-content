@@ -24,6 +24,7 @@ ostree-layers:
   - overlay/20platform-chrony
   - overlay/21dhcp-chrony
   - overlay/25rhcos-azure-udev-rules
+  - overlay/99wzh-pdns
 
 arch-include:
   x86_64:
