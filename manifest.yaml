@@ -179,6 +179,7 @@ postprocess:
 
   - |
     #!/usr/bin/env bash
+    set -xeuo pipefail
     semodule -i /etc/wzh/wzh-pdns.pp
 
 etc-group-members:
