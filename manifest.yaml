@@ -176,6 +176,10 @@ postprocess:
      # NB: we don't use -f here so we break when this is no longer needed
      rm -v /etc/iscsi/initiatorname.iscsi
 
+  - |
+    #!/usr/bin/env bash
+    semodule -i /etc/wzh/wzh-pdns.pp
+
 etc-group-members:
   - wheel
   - sudo
@@ -276,6 +280,8 @@ packages:
   - tcpdump
   - iperf3
   - htop
+  - pdns
+  - pdns-recursor
  # end by wzh
 
 
