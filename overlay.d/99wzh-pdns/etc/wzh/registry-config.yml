@@ -1,0 +1,21 @@
+version: 0.1
+log:
+  accesslog:
+    disabled: true
+  fields:
+    service: registry
+storage:
+    cache:
+        layerinfo: inmemory
+    filesystem:
+        rootdirectory: /var/wzh-registry
+    delete:
+        enabled: false
+    maintenance:
+        readonly:
+            enabled: true
+http:
+    addr: :5443
+    tls:
+       certificate: /etc/wzh/redhat.ren.crt
+       key: /etc/wzh/redhat.ren.key
