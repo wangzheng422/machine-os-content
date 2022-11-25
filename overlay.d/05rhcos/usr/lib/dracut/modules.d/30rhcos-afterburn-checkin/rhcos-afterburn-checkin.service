@@ -24,6 +24,15 @@ ConditionKernelCommandLine=ignition.platform.id=azure
 # references network resources, which it usually does in RHCOS.)
 After=ignition-fetch.service
 
+# FIPS or Ignition kargs may schedule a reboot of the machine, which
+# happens in coreos-kargs-reboot.service.  Afterward we need to be
+# able to fetch the config again.  Removal of the virtual CD persists
+# across reboots, so defer it until after the kargs reboot.
+After=coreos-kargs-reboot.service
+
+# Run before switching root.
+Before=initrd.target
+
 [Service]
 Environment=AFTERBURN_OPT_PROVIDER=--cmdline
 ExecStart=/usr/bin/afterburn ${AFTERBURN_OPT_PROVIDER} --check-in
