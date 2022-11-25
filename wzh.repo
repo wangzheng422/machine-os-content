@@ -3,7 +3,7 @@
 baseurl=http://REPO_IP/rhel-9-for-x86_64-baseos-rpms
 
 [rhel-9-appstream]
-baseurl=http://REPO_IP/rhel-9-for-x86_64-appstream-eus-rpms
+baseurl=http://REPO_IP/rhel-9-for-x86_64-appstream-rpms
 
 [rhel-9-fast-datapath]
 baseurl=http://REPO_IP/fast-datapath-for-rhel-9-x86_64-rpms
