@@ -6,4 +6,4 @@ packages:
   - ssh-key-dir
 
 ostree-layers:
-  - overlay/06el9
+  - overlay.d/06el9
