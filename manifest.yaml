@@ -213,7 +213,7 @@ packages:
  - NetworkManager-ovs
  # Need to keep providing dhclient binary
  # See: https://bugzilla.redhat.com/show_bug.cgi?id=1908462
- - dhcp-client
+#  - dhcp-client
  # Extra runtime
  - sssd
  # Common tools used by scripts and admins interactively
@@ -228,12 +228,12 @@ packages:
  # Extras
  - systemd-journal-gateway
  # RHEL7 compatibility
- - compat-openssl10
+#  - compat-openssl10
  # Make sure we pull in at least clevis 15; it drops the rd.neednet=1 hardcode
  # and has a few other patches we need.
  # https://bugzilla.redhat.com/show_bug.cgi?id=1853651
 #  - "'clevis >= 15-1.el8' 'clevis-luks >= 15-1.el8' 'clevis-dracut >= 15-1.el8'"
- - cryptsetup-reencrypt tpm2-tools
+#  - cryptsetup-reencrypt tpm2-tools
  # Used to update PAM configuration to work with SSSD
  # https://bugzilla.redhat.com/show_bug.cgi?id=1774154
  - authselect
@@ -288,11 +288,11 @@ remove-from-packages:
   # https://github.com/dracutdevs/dracut/commit/e863807
   # Let's keep only the binaries so users still relying on them can continue
   # to use them in the real root as long as they provide the configuration themselves.
-  - - dhcp-client
-    - "/etc/dhcp/dhclient.conf"
-    - "/etc/NetworkManager/dispatcher.d/11-dhclient"
-    - "/usr/lib/NetworkManager/dispatcher.d/11-dhclient"
-    - "/usr/lib64/pm-utils/sleep.d/56dhclient"
+  # - - dhcp-client
+  #   - "/etc/dhcp/dhclient.conf"
+  #   - "/etc/NetworkManager/dispatcher.d/11-dhclient"
+  #   - "/usr/lib/NetworkManager/dispatcher.d/11-dhclient"
+  #   - "/usr/lib64/pm-utils/sleep.d/56dhclient"
   # Remove the systemd unit; we only want the binary to be used
   # by MCD or kubelet.  See above.
   - - conntrack-tools
