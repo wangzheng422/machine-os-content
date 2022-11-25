@@ -3,8 +3,8 @@ rojig:
   name: rhcos
   summary: OpenShift 4
 
-variables:
-  osversion: "rhel-9.0"
+# variables:
+#   osversion: "rhel-9.0"
 
 # Include manifests common to all RHEL and CentOS Stream versions and manifest
 # common to RHEL 9 & C9S variants
