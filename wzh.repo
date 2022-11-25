@@ -1,15 +1,19 @@
 # RHEL repos
 [rhel-9-baseos]
 baseurl=http://REPO_IP/rhel-9-for-x86_64-baseos-rpms
+gpgcheck=0
 
 [rhel-9-appstream]
 baseurl=http://REPO_IP/rhel-9-for-x86_64-appstream-rpms
+gpgcheck=0
 
 [rhel-9-fast-datapath]
 baseurl=http://REPO_IP/fast-datapath-for-rhel-9-x86_64-rpms
+gpgcheck=0
 
 [rhel-9-nfv]
 baseurl=http://REPO_IP/rhel-9-for-x86_64-nfv-rpms
+gpgcheck=0
 
 # upstream: http://download.eng.bos.redhat.com/rcm-guest/puddles/RHAOS/plashets/4.10-el8/building/x86_64/os/
 # it is internal resource right now, confidential.
@@ -19,10 +23,13 @@ baseurl=http://REPO_IP/rhel-9-for-x86_64-nfv-rpms
 
 [rhel-8-server-ose]
 baseurl=http://REPO_IP/rhel-8-server-ose
+gpgcheck=0
 
 [rhel-9-server-ose]
 baseurl=http://REPO_IP/rhel-9-server-ose
+gpgcheck=0
 
 [rhel-9-server-ironic]
 baseurl=http://REPO_IP/rhel-9-server-ironic
+gpgcheck=0
 
