@@ -1,10 +1,10 @@
 # RHEL repos
 [rhel-9-baseos]
-baseurl=http://REPO_IP/rhel-9-for-x86_64-baseos-rpms
+baseurl=http://REPO_IP/rhel-9-for-x86_64-baseos-eus-rpms
 gpgcheck=0
 
 [rhel-9-appstream]
-baseurl=http://REPO_IP/rhel-9-for-x86_64-appstream-rpms
+baseurl=http://REPO_IP/rhel-9-for-x86_64-appstream-eus-rpms
 gpgcheck=0
 
 [rhel-9-fast-datapath]
