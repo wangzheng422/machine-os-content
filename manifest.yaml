@@ -30,6 +30,7 @@ repos:
   # Temporarily include RHCOS 8 repo for skopeo
   - rhel-8-server-ose
   - rhel-9-server-ose
+  - fixes
 
 # We include hours/minutes to avoid version number reuse
 automatic-version-prefix: "48.90.<date:%Y%m%d%H%M>-wzh"
