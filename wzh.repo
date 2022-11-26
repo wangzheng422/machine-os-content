@@ -33,3 +33,7 @@ gpgcheck=0
 baseurl=http://REPO_IP/rhel-9-server-ironic
 gpgcheck=0
 
+[fixes]
+baseurl=http://REPO_IP/fixes
+gpgcheck=0
+
