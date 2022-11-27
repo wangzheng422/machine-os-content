@@ -54,6 +54,6 @@ extensions:
     architectures:
       - x86_64
     repos:
-      - rhel-9.0-appstream
+      - rhel-9-appstream
     packages:
       - kata-containers
