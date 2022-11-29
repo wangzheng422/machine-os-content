@@ -251,7 +251,7 @@ packages:
  # OpenShift OKD
  #- origin-node origin-hyperkube origin-clients
  # OpenShift
- - openshift-hyperkube openshift-clients
+#  - openshift-hyperkube openshift-clients
  # Gluster - Used for Openshift e2e gluster testcases
  # Reverts https://gitlab.cee.redhat.com/coreos/redhat-coreos/merge_requests/367 and add it for all arches
  - glusterfs-fuse
@@ -303,3 +303,9 @@ remove-from-packages:
   # by MCD or kubelet.  See above.
   - - conntrack-tools
     - /usr/lib/systemd/system
+
+repo-packages:
+  # we always want the kernel from BaseOS
+  - repo: rhel-8-server-ose
+    packages:
+      - openshift-hyperkube openshift-clients
