@@ -37,10 +37,10 @@ arch-include:
 # See README.md
 # and https://github.com/openshift/release/blob/master/core-services/release-controller/README.md#rpm-mirrors
 repos:
-  - rhel-8-baseos
-  - rhel-8-appstream
-  - rhel-8-fast-datapath
-  - rhel-8-server-ose
+  - rhel-8.4-baseos
+  - rhel-8.4-appstream
+  - rhel-8.4-fast-datapath
+  - rhel-8.4-server-ose-4.10
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=1938928
 rpmdb: bdb
@@ -223,7 +223,7 @@ packages:
  - cri-o cri-tools
  # Networking
  - nfs-utils
- - openvswitch2.16
+ - openvswitch2.17
  - dnsmasq
  - NetworkManager-ovs
  # Extra runtime
@@ -271,15 +271,11 @@ packages:
  - conntrack-tools
 
 repo-packages:
-  # we always want the kernel from BaseOS
-  - repo: rhel-8-baseos
-    packages:
-      - kernel
   # we want the one shipping in RHEL, not the equivalently versioned one in RHAOS
-  - repo: rhel-8-appstream
+  - repo: rhel-8.4-appstream
     packages:
       - nss-altfiles
-  - repo: rhel-8-server-ose
+  - repo: rhel-8.4-server-ose-4.10
     packages:
       # eventually, we want the one from the container-tools module, but we're
       # not there yet
