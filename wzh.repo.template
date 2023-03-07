@@ -20,7 +20,7 @@ baseurl=http://REPO_IP/rhel8/rhel-8-for-x86_64-nfv-rpms
 gpgcheck=0
 
 [rhel-8-server-ose-4.12]
-baseurl=http://REPO_IP/ose/4.12
+baseurl=http://REPO_IP/ose/4.12/rhel-8-server-ose-4.12
 gpgcheck=0
 
 [AnolisOS-BaseOS]
