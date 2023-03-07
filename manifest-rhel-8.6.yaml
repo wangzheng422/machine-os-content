@@ -22,10 +22,17 @@ ostree-layers:
 
 # See "Notes about repositories" in `docs/development.md`
 repos:
-  - rhel-8.6-baseos
-  - rhel-8.6-appstream
-  - rhel-8.6-fast-datapath
-  - rhel-8.6-server-ose-4.12
+  # - rhel-8.6-baseos
+  # - rhel-8.6-appstream
+  # - rhel-8.6-fast-datapath
+  # - rhel-8.6-server-ose-4.12
+  - rhel-8-baseos
+  - rhel-8-appstream
+  - rhel-8-fast-datapath
+  - rhel-8-server-ose-4.12
+  - AnolisOS-BaseOS
+  - AnolisOS-AppStream
+  - AnolisOS-Plus
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=1938928
 rpmdb: bdb
@@ -157,10 +164,10 @@ packages:
 # Packages pinned to specific repos in RHCOS
 repo-packages:
   # we want the one shipping in RHEL, not the equivalently versioned one in RHAOS
-  - repo: rhel-8.6-appstream
+  - repo: rhel-8-appstream
     packages:
       - nss-altfiles
-  - repo: rhel-8.6-server-ose-4.12
+  - repo: rhel-8-server-ose-4.12
     packages:
       # Starting with 4.11, we are working with the Containers team to build
       # certain container-tools RPMs in the RHAOS branches for RHCOS + RHEL
