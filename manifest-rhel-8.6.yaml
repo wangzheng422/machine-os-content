@@ -31,9 +31,10 @@ repos:
   - rhel-8-fast-datapath
   - rhel-8-fix
   - rhel-8-server-ose-4.12
-  - AnolisOS-BaseOS
-  - AnolisOS-AppStream
-  - AnolisOS-Plus
+  # - AnolisOS-BaseOS
+  # - AnolisOS-AppStream
+  # - AnolisOS-Plus
+  - AnolisOS-fix
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=1938928
 rpmdb: bdb
