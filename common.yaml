@@ -218,6 +218,7 @@ packages:
  # and it's not really going to be worth playing the "where's my kernel module"
  # game long term.  If we ship it we support it, etc.
  - kernel-modules-extra-5.14.0-427.13.1.el9_4
+ - kernel-core-5.14.0-427.13.1.el9_4
  # Audit
  - audit
  # Bootloader updater

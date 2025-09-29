@@ -34,18 +34,18 @@ extensions:
   # extension: https://github.com/openshift/machine-config-operator/pull/2143.
   kernel-devel:
     packages:
-      - kernel-devel-5.14.0-427.13.1.el9_4
-      - kernel-headers-5.14.0-427.13.1.el9_4
+      - kernel-devel
+      - kernel-headers
     match-base-evr: kernel
   # These are already in the base, so they're not OS extensions, but they're
   # useful to have in RPM form to install in kmod build containers.
   kernel:
     kind: development
     packages:
-      - kernel-5.14.0-427.13.1.el9_4
-      - kernel-core-5.14.0-427.13.1.el9_4
-      - kernel-modules-5.14.0-427.13.1.el9_4
-      - kernel-modules-extra-5.14.0-427.13.1.el9_4
+      - kernel
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-extra
     match-base-evr: kernel
   # GRPA-2822
   # https://github.com/openshift/machine-config-operator/pull/1330
