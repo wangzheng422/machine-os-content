@@ -15,6 +15,7 @@ include:
 repos:
   - rhel-9.4-baseos
   - rhel-9.4-appstream
+  - wzh-fix-repo
 
 # Eventually we should try to build these images as part of the RHEL composes.
 # In that case, the versioning should instead be exactly the same as the pungi
