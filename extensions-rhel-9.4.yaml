@@ -36,7 +36,7 @@ extensions:
     packages:
       - kernel-devel-5.14.0-427.13.1.el9_4
       - kernel-headers-5.14.0-427.13.1.el9_4
-    match-base-evr: kernel-5.14.0-427.13.1.el9_4
+    match-base-evr: kernel
   # These are already in the base, so they're not OS extensions, but they're
   # useful to have in RPM form to install in kmod build containers.
   kernel:
@@ -46,7 +46,7 @@ extensions:
       - kernel-core-5.14.0-427.13.1.el9_4
       - kernel-modules-5.14.0-427.13.1.el9_4
       - kernel-modules-extra-5.14.0-427.13.1.el9_4
-    match-base-evr: kernel-5.14.0-427.13.1.el9_4
+    match-base-evr: kernel
   # GRPA-2822
   # https://github.com/openshift/machine-config-operator/pull/1330
   # https://github.com/openshift/enhancements/blob/master/enhancements/support-for-realtime-kernel.md
