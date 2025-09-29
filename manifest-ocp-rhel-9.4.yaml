@@ -92,7 +92,7 @@ repo-packages:
     packages:
       - nss-altfiles
   - repo: wzh-fix-repo
-    package:
+    packages:
       - kernel
       - kernel-core
       - kernel-modules
