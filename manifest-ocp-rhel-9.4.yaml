@@ -95,6 +95,7 @@ repo-packages:
     packages:
       - kernel-core
       - kernel-modules
+      - kernel-modules-core
       - kernel-modules-extra
       - kernel-devel
       - kernel-headers
