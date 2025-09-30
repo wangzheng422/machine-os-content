@@ -100,6 +100,11 @@ repo-packages:
       - kernel-modules-extra
       - kernel-devel
       - kernel-headers
+      - metax-driver
+      - mxfw
+      - mxgvm
+      - mxhv
+      - mxsmt
   - repo: rhel-9.4-server-ose-4.18
     packages:
       - conmon-rs
