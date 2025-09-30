@@ -93,6 +93,7 @@ repo-packages:
       - nss-altfiles
   - repo: wzh-fix-repo
     packages:
+      # kernel
       - kernel
       - kernel-core
       - kernel-modules
@@ -100,11 +101,63 @@ repo-packages:
       - kernel-modules-extra
       - kernel-devel
       - kernel-headers
+      # metax driver
       - metax-driver
       - mxfw
       # - mxgvm # will break mx-smi
       - mxhv
       - mxsmt
+      # metax sdk
+      - commonlib
+      - maca_sdk
+      - macainfo
+      - mcanalyzer
+      - mcblas
+      - mcblasLt
+      - mccl
+      - mccltests
+      - mccompiler
+      - mcdnn
+      - mcfft
+      - mcfile
+      - mcflashattn
+      - mcflashinfer
+      - mcgpufort
+      - mchotspot
+      - mcimage
+      - mcjpeg
+      - mckernellib
+      - mcmathlib
+      - mcpti
+      - mcrand
+      - mcruntime
+      - mcsolver
+      - mcsolverit
+      - mcsparse
+      - mcthrust
+      - mctlass
+      - mctoolext
+      - mctracer
+      - metax-fabricmanager
+      - mxccl_plugin
+      - mxcompute
+      - mxdiagease
+      - mxexporter
+      - mxffmpeg
+      - mxffmpeg-dev
+      - mxfortran
+      - mxgdrcopy
+      - mxgpu_llvm
+      - mxkw
+      - mxmaca-install
+      - mxompi
+      - mxreport
+      - mxsml-devel
+      - mxucx
+      - mxvpu
+      - mxvs
+      - sample
+      - vscode-clangd
   - repo: rhel-9.4-server-ose-4.18
     packages:
       - conmon-rs
