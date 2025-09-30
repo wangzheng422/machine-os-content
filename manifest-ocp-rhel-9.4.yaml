@@ -102,7 +102,7 @@ repo-packages:
       - kernel-headers
       - metax-driver
       - mxfw
-      - mxgvm
+      # - mxgvm # will break mx-smi
       - mxhv
       - mxsmt
   - repo: rhel-9.4-server-ose-4.18
