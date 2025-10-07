@@ -28,8 +28,8 @@ baseurl=http://192.168.99.12:8000/wzh-fix-repo
 enabled=1
 gpgcheck=0
 
-[wzh-fix-metax]
-name=wzh-fix-metax
-baseurl=http://192.168.99.12:8000/wzh-fix-metax
-enabled=1
-gpgcheck=0
+# [wzh-fix-metax]
+# name=wzh-fix-metax
+# baseurl=http://192.168.99.12:8000/wzh-fix-metax
+# enabled=1
+# gpgcheck=0
